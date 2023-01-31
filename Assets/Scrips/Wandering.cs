@@ -11,7 +11,7 @@ public class Wandering : MonoBehaviour
     public float range; // el rango en el cual se ira moviendo aleatoriamente
     public float maxDistance; // su distancia maxima, para que no avandone su sitio
 
-    public GameObject puntoA, puntoB, puntoC;
+    //public GameObject puntoA, puntoB, puntoC; <- Buscaba sacar su vector, aunque al momento de programarlo no me funcionaba.
     int i = 0; // se crea un index para buscar los puntos 
 
 
@@ -38,17 +38,17 @@ public class Wandering : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position,
                                                 wayPoint[i].transform.position,
-                                                speed * Time.deltaTime);
+                                                speed * Time.deltaTime); // busca en el index de los waypoint y comienza a moverse a una valocidad puesta por nosotros
 
         if (transform.position == wayPoint[i].transform.position)
         {
-            i += 1;
+            i += 1; // aumenta el index para cambiar el waypoint
             
         }
 
         if (i == wayPoint.Length)
         {
-            i = 0;
+            i = 0; // si el index es igual al numero de waypoint estos se resetearan y regresara a su inicio.
         }
             
     }
@@ -60,4 +60,5 @@ public class Wandering : MonoBehaviour
 
     //https://www.youtube.com/watch?v=FdNervYWmcE&t=96s&ab_channel=PekkeDev este video me ayudo mas a programar la forma en la que esto se realiza, pues tenia una idea 
     // aunque unicamente se podia con 3D
+    // https://www.youtube.com/watch?v=ExRQAEm4jPg&ab_channel=AlexanderZotov videos para entender como poner mas de un waypoint y que valla cambiando entre elos
 }
