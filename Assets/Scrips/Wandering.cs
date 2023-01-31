@@ -19,7 +19,7 @@ public class Wandering : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = wayPoint[i].transform.position;
+        transform.position = wayPoint[i].transform.position; // empieza a ir al primer waypoint 
 
         
     }
@@ -29,7 +29,7 @@ public class Wandering : MonoBehaviour
     {
         //transform.position = Vector2.MoveTowards(transform.position, waypoints, speed * Time.deltaTime);   Esta funcion sirve para que se muevan entre un lugar a otro ejemplo de 
         // de como funcionan
-        Move();
+        Move(); // comienza a moverse
 
 
     }
@@ -40,7 +40,7 @@ public class Wandering : MonoBehaviour
                                                 wayPoint[i].transform.position,
                                                 speed * Time.deltaTime); // busca en el index de los waypoint y comienza a moverse a una valocidad puesta por nosotros
 
-        if (transform.position == wayPoint[i].transform.position)
+        if (transform.position == wayPoint[i].transform.position) // si la posicion de la IA es igual a la del waypoint buscara el siguiente 
         {
             i += 1; // aumenta el index para cambiar el waypoint
             
@@ -53,10 +53,7 @@ public class Wandering : MonoBehaviour
             
     }
 
-    void apagartodo() // apaga los monitos
-    {
-       
-    }
+
 
     //https://www.youtube.com/watch?v=FdNervYWmcE&t=96s&ab_channel=PekkeDev este video me ayudo mas a programar la forma en la que esto se realiza, pues tenia una idea 
     // aunque unicamente se podia con 3D
